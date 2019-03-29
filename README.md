@@ -134,5 +134,11 @@ Let's put this `current_user` method to use. Go to your `views` folder and open 
 </header>
 ```
 
+Great! Just one more step. Let's put our `authenticate_user!` method to work. Navigate to your `users_controller.rb` file, and inside the class definition *before* any of the actions, write the following line:
+
+```
+before_action :authenticate_user!, except: [:new, :create]
+```
+
 Awesome. Now go ahead and give this log in thing a try!
 
