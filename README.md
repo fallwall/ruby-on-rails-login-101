@@ -77,7 +77,7 @@ Next, let's navigate over to our `users_controller.rb` file and update the `crea
 def create
   @user = User.new(user_params)
   if @user.save
-    session[:user_id] = @customer.id
+    session[:user_id] = @user.id
     redirect_to @user
   end
 end
