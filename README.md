@@ -129,6 +129,7 @@ Let's put this `current_user` method to use. Go to your `views` folder and open 
     <a href="/logout">Log Out</a>
   <% else %>
     <a href="/login">Log In</a>
+    <a href="/users/new">Create Account</a>
   <% end %>
 </header>
 ```
