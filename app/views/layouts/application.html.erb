@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%#=link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet" %>
   </head>
 
   <body>
+  <header>
+    <% if current_user %>
+      <a href= '/logout'>Log Out</a>
+    <% else %>
+      <a href= '/login'>Log In</a>
+      <a href= '/users/new'>Create Account</a>
+    <% end %>
+  </header>
     <%= yield %>
   </body>
 </html>

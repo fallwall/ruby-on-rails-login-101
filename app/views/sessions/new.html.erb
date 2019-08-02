@@ -1,0 +1,10 @@
+<h2>Login</h2>
+<%= form_tag '/login', method: :post do %>
+ <div>
+  <%= text_field_tag :name, nil, placeholder: 'name' %>
+ </div>
+ <div>
+  <%= password_field_tag :password, nil, placeholder: 'password' %>
+ </div>
+  <%= submit_tag 'Submit' %>
+<%end%>

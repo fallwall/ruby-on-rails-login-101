@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(user_id: @user.id)
@@ -11,7 +12,10 @@ class PostsController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
-    @post = Post.new
+    if @user == current_user
+      @post = Post.new
+    else
+      redirect_to user_posts_path(@user)
   end
 
   def create
