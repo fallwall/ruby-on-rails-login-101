@@ -3,4 +3,6 @@
   <p><%= link_to post.title, user_post_path(@user,post) %></p>
 <% end %>
 <hr>
-<%= link_to "Create New Post", new_user_post_path(@user) %>
+<% if @user == current_user %>
+  <%= link_to "Create New Post", new_user_post_path(@user) %>
+<% end %>
